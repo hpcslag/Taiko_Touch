@@ -23,7 +23,6 @@ public class GUILayer {
         Window.setSize(600,800);
         Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        
         JButton KeyCode_Z = new JButton("Z");
         JButton KeyCode_X = new JButton("X");
         JButton KeyCode_C = new JButton("C");
