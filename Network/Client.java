@@ -29,9 +29,9 @@ public class Client {
         
         client = new Socket(ip,port);
     }
-    public static void send() throws IOException{
+    public static void send(String message) throws IOException{
         os = client.getOutputStream();    // 取得輸出串流。
-        os.write("Z".getBytes("UTF-8"));// 送訊息到 Client 端。                    
+        os.write(message.getBytes("UTF-8"));// 送訊息到 Client 端。                    
     }
     public static void send_close()throws IOException{
         os.close(); // 關閉輸出串流。
@@ -50,6 +50,7 @@ public class Client {
                 byte b = (byte) by;
                 buffer.append((char)b);
             }
+          
         }catch(Exception ex){
             input.close();
         }

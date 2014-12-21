@@ -19,7 +19,8 @@ public class Main {
         /*GUILayer Layer = new GUILayer();
         Layer.Build();*/
         Client.Client_init("127.0.0.1");
-        Client.send();
+        Client.send("SA");
+        Client.send("SA");
         System.out.println(Client.Listener());
     }
     
