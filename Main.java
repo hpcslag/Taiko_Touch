@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 import Interface.*;
+import Network.Client;
 /**
  *
  * @author Administrator
@@ -17,6 +18,9 @@ public class Main {
         // TODO code application logic here
         /*GUILayer Layer = new GUILayer();
         Layer.Build();*/
+        Client.Client_init("127.0.0.1");
+        Client.send();
+        System.out.println(Client.Listener());
     }
     
 }
