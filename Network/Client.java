@@ -39,4 +39,28 @@ public class Client {
         System.out.println("FROM SERVER: " + modifiedSentence);
         //clientSocket.close();
     }
+    public static boolean check()throws IOException{
+        if(ip == null){
+            throw new RuntimeException("No Set IP Address");
+        }
+        try{
+            String sentence;
+            String modifiedSentence;
+            Socket clientSocket = new Socket(ip, 6113);
+            BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
+            DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
+            BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
+            outToServer.writeBytes("Recod" + '\n');
+            modifiedSentence = inFromServer.readLine();
+            
+            if(Integer.parseInt(modifiedSentence) == 200){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            return false;
+        }
+    }
 }
