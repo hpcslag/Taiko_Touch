@@ -16,12 +16,28 @@ public class Main {
      */
     public static void main(String[] args) throws Exception{
         // TODO code application logic here
-        /*GUILayer Layer = new GUILayer();
-        Layer.Build();*/
+        GUILayer Layer = new GUILayer();
+        Layer.Build();
         Client.Client_init("127.0.0.1");
-        Client.send("SA");
-        Client.send("SA");
-        System.out.println(Client.Listener());
+        Client.send("Z");
+        for(int i = 0;;i++){
+            if(i==655350000L){
+                break;
+            }
+        }
+        Client.send("X");
+        for(int i = 0;;i++){
+            if(i==655350000L){
+                break;
+            }
+        }
+        Client.send("C");
+        for(int i = 0;;i++){
+            if(i==655350000L){
+                break;
+            }
+        }
+        Client.send("V");
     }
     
 }
