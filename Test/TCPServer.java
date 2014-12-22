@@ -21,12 +21,12 @@ public class TCPServer {
             BufferedReader inFromClient = new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
             DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
             clientSentence = inFromClient.readLine();
+            capitalizedSentence = clientSentence.toUpperCase() + '\n';
             if(clientSentence.equals("Recod")){
                 outToClient.writeBytes(200+"\n");
-            }else{
-                System.out.println("Received: " + clientSentence);
-                capitalizedSentence = clientSentence.toUpperCase() + '\n';
             }
+            System.out.println("RunKeyCode: " + clientSentence);
+            outToClient.writeBytes(capitalizedSentence);
         }
     }
 }

@@ -18,17 +18,15 @@ public class Main {
         // TODO code application logic here
         
         //Input Setting Layer
-        Client.Client_init("127.0.0.0");
-        if(Client.check()){
-            System.out.println("ok");
-        }else{
+        Client.Client_init("127.0.0.1");
+        if(Client.check() != true){
             throw new RuntimeException("Connect Fail!");
-        };
+        }
         
-        /*
+        System.out.println("IP: "+Client.ip+" is Connected");
         //Input Control Layer
-        GUILayer Layer = new GUILayer();
-        Layer.Build();
+        /*GUILayer Layer = new GUILayer();
+        Layer.Build();*/
         Client.send("Z");
         for(int i = 0;;i++){
             if(i==655350000L){
@@ -47,7 +45,7 @@ public class Main {
                 break;
             }
         }
-        Client.send("V");*/
+        Client.send("V");
     }
     
 }
