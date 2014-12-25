@@ -24,6 +24,7 @@ public class Client {
 
     public static void send(String parameters)throws IOException{
         if(ip == null){
+            
             throw new RuntimeException("No Set IP Address");
         }
         String sentence;
@@ -37,7 +38,7 @@ public class Client {
         outToServer.writeBytes(parameters + '\n');
         modifiedSentence = inFromServer.readLine();
         System.out.println("FROM SERVER: " + modifiedSentence);
-        //clientSocket.close();
+        clientSocket.close();
     }
     public static boolean check()throws IOException{
         if(ip == null){
@@ -54,7 +55,7 @@ public class Client {
             outToServer.writeBytes("Recod" + '\n');
             modifiedSentence = inFromServer.readLine();
             
-            if(Integer.parseInt(modifiedSentence) == 200){
+            if(modifiedSentence == "Recod"){
                 return true;
             }else{
                 return false;

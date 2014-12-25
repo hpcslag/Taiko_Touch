@@ -19,9 +19,9 @@ public class Main {
         
         //Input Setting Layer
         Client.Client_init("127.0.0.1");
-        if(Client.check() != true){
+        /*if(Client.check() != true){
             throw new RuntimeException("Connect Fail!");
-        }
+        }*/
         
         System.out.println("IP: "+Client.ip+" is Connected");
         //Input Control Layer
