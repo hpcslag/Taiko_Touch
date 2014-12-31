@@ -34,17 +34,7 @@ public class Main {
             }
         }
         Client.send("X");
-        for(int i = 0;;i++){
-            if(i==655350000L){
-                break;
-            }
-        }
         Client.send("C");
-        for(int i = 0;;i++){
-            if(i==655350000L){
-                break;
-            }
-        }
         Client.send("V");
     }
     

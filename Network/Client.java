@@ -24,7 +24,7 @@ public class Client {
 
     public static void send(String parameters)throws IOException{
         if(ip == null){
-            
+        	
             throw new RuntimeException("No Set IP Address");
         }
         String sentence;
@@ -35,7 +35,7 @@ public class Client {
         BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
         //sentence = inFromUser.readLine();
-        outToServer.writeBytes(parameters + '\n');
+        outToServer.writeBytes(parameters+'\n');
         modifiedSentence = inFromServer.readLine();
         System.out.println("FROM SERVER: " + modifiedSentence);
         clientSocket.close();
